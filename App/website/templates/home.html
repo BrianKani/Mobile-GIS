@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Campus GIS
+{% endblock %}
+
+{% block content %}
+    <style>
+        /* Style for the search bar */
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search-container input[type=text] {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .search-container button {
+            padding: 10px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .search-container button:hover {
+            background: #0056b3;
+        }
+
+        /* Style for the map container */
+        .map-container {
+            text-align: center;
+        }
+        .map-container iframe {
+            width: 80%;
+            max-width: 800px; /* Limit maximum width of the map */
+            height: 500px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            margin: 0 auto; /* Center the map horizontally */
+        }
+    </style>
+
+    <h1 align="center">Campus GIS</h1>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form method="GET" action="/search">
+            <input type="text" name="query" placeholder="Search for a location on campus">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- Display Google Maps with Campus Location -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.72449460114!2d36.95777525028268!3d-0.3929369999999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1828677946c836e7%3A0xb9dde59816f032ef!2sDeKUT%20Medical%20Centre!5e0!3m2!1sen!2ske!4v1708897822827!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+{% endblock %}
